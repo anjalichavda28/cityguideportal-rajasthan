@@ -1,0 +1,159 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f2ed;
+    color: #263348;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 245px;
+    background: #17243a;
+    color: white;
+    padding: 25px 18px;
+    flex-shrink: 0;
+}
+
+.admin-sidebar h2 {
+    color: #e5bd75;
+    margin-bottom: 30px;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 13px;
+    margin: 7px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+    background: #34445d;
+}
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-topbar h1 {
+    margin: 0;
+    color: #17243a;
+}
+
+.admin-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000d;
+    margin-bottom: 25px;
+}
+
+.admin-panel h2 {
+    margin-top: 0;
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.admin-btn {
+    background: #b58b45;
+    color: white;
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.admin-btn:hover {
+    background: #967039;
+}
+
+.admin-table-wrap {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.admin-table th {
+    background: #17243a;
+    color: white;
+}
+
+.admin-table button {
+    background: #b94040;
+    color: white;
+    border: 0;
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-back {
+    color: #b58b45;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media(max-width: 700px) {
+    .admin-layout {
+        display: block;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+    }
+
+    .admin-main {
+        padding: 18px;
+    }
+
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+}

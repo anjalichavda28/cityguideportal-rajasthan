@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Restaurants - Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <h2>👑 Rajasthan</h2>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-cities.html">Manage Cities</a>
+        <a href="admin-places.html">Tourist Places</a>
+        <a href="admin-hotels.html">Hotels</a>
+        <a class="active" href="admin-restaurants.html">Restaurants</a>
+        <a href="index.html">View Website</a>
+        <a href="#" onclick="adminLogout()">Logout</a>
+    </aside>
+
+    <main class="admin-main">
+        <div class="admin-topbar">
+            <h1>Manage Restaurants</h1>
+            <a class="admin-back" href="admin-dashboard.html">← Dashboard</a>
+        </div>
+
+        <section class="admin-panel">
+            <h2>Add New Restaurant</h2>
+            <form class="admin-form" onsubmit="addAdminItem('restaurants', event)">
+                <input name="name" placeholder="Restaurant Name" required>
+                <input name="city" placeholder="City Name" required>
+                <button class="admin-btn" type="submit">+ Add Restaurant</button>
+            </form>
+        </section>
+
+        <section class="admin-panel">
+            <h2>Restaurant Records</h2>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>No.</th><th>Restaurant Name</th><th>City</th><th>Action</th></tr>
+                    </thead>
+                    <tbody id="adminItemsTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+if (sessionStorage.getItem("rajasthanAdminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+}
+function adminLogout() {
+    sessionStorage.removeItem("rajasthanAdminLoggedIn");
+    window.location.href = "admin-login.html";
+}
+</script>
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+<script>showAdminItems("restaurants", "adminItemsTable");</script>
+</body>
+</html>

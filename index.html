@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rajasthan - City Guide Portal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <div class="logo-icon">R</div>
+
+            <div class="logo-text">
+                <h2>RAJASTHAN</h2>
+                <span>CITY GUIDE PORTAL</span>
+            </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="cities.html">Cities</a>
+            <a href="places.html">Places</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+
+            <div class="clock-box">
+                <i class="fa-regular fa-clock"></i>
+                <span id="liveClock">Loading...</span>
+            </div>
+
+            <a href="login.html" class="login-btn">
+                <i class="fa-regular fa-user"></i>
+                Login
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                <i class="fa-solid fa-crown"></i>
+                THE LAND OF ROYAL HERITAGE
+            </span>
+
+            <h1>
+                Discover The<br>
+                Royal Beauty Of<br>
+                <span>Rajasthan</span>
+            </h1>
+
+            <p>
+                Explore magnificent forts, beautiful palaces,
+                colourful cities and unforgettable experiences.
+                Your journey through royal Rajasthan starts here.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="cities.html" class="primary-btn">
+                    Explore Rajasthan
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="about.html" class="secondary-btn">
+                    Discover More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-bottom">
+            <div>
+            </div>
+
+            <div class="scroll-text">
+                SCROLL TO EXPLORE
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO SECTION ================= -->
+
+    <section class="intro-section">
+
+        <div class="intro-image">
+            <img
+                src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=1000"
+                alt="Beautiful Rajasthan Palace">
+        </div>
+
+        <div class="intro-content">
+
+            <span class="small-heading">WELCOME TO RAJASTHAN</span>
+
+            <h2>
+                Experience The Magic Of
+                <span>Royal Rajasthan</span>
+            </h2>
+
+            <p>
+                Rajasthan is a land of royal heritage, magnificent
+                architecture, vibrant traditions and beautiful
+                landscapes.
+            </p>
+
+            <p>
+                From the pink streets of Jaipur to the beautiful
+                lakes of Udaipur, discover everything Rajasthan
+                has to offer through one easy-to-use travel portal.
+            </p>
+
+            <a href="about.html" class="text-link">
+                Know More About Us
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= POPULAR CITIES ================= -->
+
+    <section class="cities-section">
+
+        <div class="section-title">
+
+            <div>
+                <span class="small-heading">EXPLORE DESTINATIONS</span>
+                <h2>Popular Cities</h2>
+                <p>Discover the most beautiful cities of Rajasthan.</p>
+            </div>
+
+            <a href="cities.html" class="view-link">
+                View All Cities
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="city-grid">
+
+            <!-- Jaipur -->
+
+            <div class="city-card">
+
+                <div class="city-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=800"
+                        alt="Jaipur">
+
+                    <span class="city-number">01</span>
+                </div>
+
+                <div class="city-info">
+                    <span>THE PINK CITY</span>
+                    <h3>Jaipur</h3>
+
+                    <p>
+                        Discover royal palaces and historic forts.
+                    </p>
+
+                    <a href="city-details.html?city=jaipur">
+                        Explore City <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- Udaipur -->
+
+            <div class="city-card">
+
+                <div class="city-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800"
+                        alt="Udaipur">
+
+                    <span class="city-number">02</span>
+                </div>
+
+                <div class="city-info">
+                    <span>THE CITY OF LAKES</span>
+                    <h3>Udaipur</h3>
+
+                    <p>
+                        Experience beautiful lakes and royal views.
+                    </p>
+
+                    <a href="city-details.html?city=udaipur">
+                        Explore City <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- Jodhpur -->
+
+            <div class="city-card">
+
+                <div class="city-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800"
+                        alt="Jodhpur">
+
+                    <span class="city-number">03</span>
+                </div>
+
+                <div class="city-info">
+                    <span>THE BLUE CITY</span>
+                    <h3>Jodhpur</h3>
+
+                    <p>
+                        Explore the magnificent Mehrangarh Fort.
+                    </p>
+
+                    <a href="city-details.html?city=jodhpur">
+                        Explore City <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES SECTION ================= -->
+
+    <section class="features-section">
+
+        <div class="section-title center-title">
+
+            <span class="small-heading">TRAVEL MADE SIMPLE</span>
+
+            <h2>Everything You Need In One Place</h2>
+
+            <p>
+                Plan your Rajasthan journey with useful travel
+                information and easy navigation.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+
+                <h3>Explore Cities</h3>
+
+                <p>
+                    Discover famous cities and their unique culture.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+
+                <h3>Tourist Places</h3>
+
+                <p>
+                    Find historical forts, palaces and attractions.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-hotel"></i>
+                </div>
+
+                <h3>Hotels & Stays</h3>
+
+                <p>
+                    Explore accommodation options for your trip.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <h3>Restaurants</h3>
+
+                <p>
+                    Discover restaurants and local food experiences.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <h3>Google Maps</h3>
+
+                <p>
+                    Find destinations through Google Maps.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h3>Favourites</h3>
+
+                <p>
+                    Save your favourite places for later.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESTINATION BANNER ================= -->
+
+    <section class="destination-banner">
+
+        <div class="banner-overlay"></div>
+
+        <div class="banner-content">
+
+            <span class="small-heading">YOUR ROYAL JOURNEY AWAITS</span>
+
+            <h2>
+                Make Memories In<br>
+                <span>Incredible Rajasthan</span>
+            </h2>
+
+            <p>
+                Discover unforgettable destinations,
+                rich culture and royal experiences.
+            </p>
+
+            <a href="cities.html" class="primary-btn">
+                Start Exploring
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-about">
+
+                <a href="index.html" class="footer-logo">
+                    <div class="logo-icon">R</div>
+
+                    <div>
+                        <h2>RAJASTHAN</h2>
+                        <span>CITY GUIDE PORTAL</span>
+                    </div>
+                </a>
+
+                <p>
+                    Your travel companion to explore the royal
+                    heritage, beautiful cities and attractions
+                    of Rajasthan.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="cities.html">Explore Cities</a>
+                <a href="places.html">Tourist Places</a>
+                <a href="about.html">About Us</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore More</h3>
+
+                <a href="hotels.html">Hotels</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="favorites.html">Favourites</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Account</h3>
+
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+
+                <a href="admin-login.html">Admin Login</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Rajasthan City Guide Portal.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Explore | Experience | Enjoy Rajasthan
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

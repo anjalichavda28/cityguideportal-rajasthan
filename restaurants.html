@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants | Rajasthan City Guide Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <span>RAJASTHAN</span><small>City Guide Portal</small>
+        </a>
+        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="cities.html">Cities</a>
+            <a href="places.html">Places</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="restaurants.html" class="active">Restaurants</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-content">
+        <span>TASTE RAJASTHAN</span>
+        <h1>Food & Restaurants</h1>
+        <p>Discover local flavours and popular restaurants across Rajasthan.</p>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="section-heading">
+        <span class="section-label">LOCAL FOOD EXPERIENCE</span>
+        <h2>Popular Restaurants</h2>
+        <p>Explore restaurants and discover where to enjoy your next meal.</p>
+    </div>
+
+    <div class="city-search-area">
+        <div class="search-input">
+            <i class="fas fa-search"></i>
+            <input type="text" id="restaurantSearch" placeholder="Search restaurants...">
+        </div>
+        <select id="restaurantCityFilter">
+            <option value="">All Cities</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Udaipur">Udaipur</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Jaisalmer">Jaisalmer</option>
+        </select>
+    </div>
+
+    <div class="city-grid" id="restaurantsGrid"></div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-about">
+            <h2>RAJASTHAN</h2>
+            <p>Your travel companion to explore the royal beauty and culture of Rajasthan.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="cities.html">Cities</a>
+            <a href="places.html">Places</a>
+            <a href="hotels.html">Hotels</a>
+        </div>
+        <div class="footer-links">
+            <h3>Contact</h3>
+            <p>Email: info@rajasthanguide.com</p>
+            <p>Location: Rajasthan, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 City Guide Portal – Rajasthan. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+    setupSearch(restaurants, "restaurantSearch", "restaurantCityFilter", "restaurantsGrid", "restaurant");
+</script>
+</body>
+</html>

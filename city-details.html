@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>City Details | City Guide Portal Rajasthan</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span>RAJASTHAN</span>
+                <small>City Guide Portal</small>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="cities.html" class="active">Cities</a>
+                <a href="places.html">Places</a>
+                <a href="hotels.html">Hotels</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- CITY HERO -->
+    <section class="city-detail-hero" id="cityHero">
+
+        <div class="city-detail-overlay">
+
+            <span>EXPLORE RAJASTHAN</span>
+
+            <h1 id="cityName">City Name</h1>
+
+            <p id="cityNickname">Discover the Royal Beauty</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CITY INFORMATION -->
+    <section class="intro-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">CITY INFORMATION</span>
+
+            <h2 id="cityHeading">About the City</h2>
+
+        </div>
+
+        <div class="city-detail-content">
+
+            <div class="city-detail-image">
+                <img id="cityImage" src="" alt="City Image">
+            </div>
+
+            <div class="city-detail-text">
+
+                <h3 id="cityTitle">Welcome to Rajasthan</h3>
+
+                <p id="cityDescription"></p>
+
+                <div class="city-info-box">
+
+                    <p>
+                        <strong>Population:</strong>
+                        <span id="cityPopulation">Not Available</span>
+                    </p>
+
+                    <p>
+                        <strong>Famous For:</strong>
+                        <span id="cityFamous">Not Available</span>
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong>
+                        Rajasthan, India
+                    </p>
+
+                </div>
+
+                <a href="#" id="cityMap" target="_blank" rel="noopener" class="btn-primary">
+                    <i class="fas fa-map-marker-alt"></i> View on Google Maps
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RELATED PLACES -->
+    <section class="features-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">EXPLORE MORE</span>
+
+            <h2>Popular Places in This City</h2>
+
+        </div>
+
+        <div class="city-grid" id="relatedPlaces">
+
+        </div>
+
+        <div class="section-heading">
+            <a href="places.html" class="btn-primary">
+                View All Tourist Places
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-about">
+                <h2>RAJASTHAN</h2>
+
+                <p>
+                    Your travel companion to explore the
+                    royal beauty and culture of Rajasthan.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="cities.html">Cities</a>
+                <a href="places.html">Places</a>
+                <a href="hotels.html">Hotels</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Contact</h3>
+
+                <p>Email: info@rajasthanguide.com</p>
+                <p>Location: Rajasthan, India</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 City Guide Portal – Rajasthan. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        
+// Get ID and type from URL
+const params = new URLSearchParams(window.location.search);
+const itemId = params.get("id");
+const type = params.get("type") || "city";
+
+// Select correct data
+let dataList = [];
+
+if (type === "city") {
+    dataList = cities;
+} else if (type === "place") {
+    dataList = places;
+} else if (type === "hotel") {
+    dataList = hotels;
+} else if (type === "restaurant") {
+    dataList = restaurants;
+}
+
+// Find selected item
+const selectedItem = dataList.find(item =>
+    String(item.id) === String(itemId)
+);
+
+// Safe text update
+function updateText(id, value) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = value || "Not Available";
+    }
+}
+
+if (selectedItem) {
+
+    const title = selectedItem.name || "Rajasthan";
+    const city = selectedItem.city || "Rajasthan";
+
+    document.title = title + " | Rajasthan Guide";
+
+    updateText("cityName", title);
+    updateText("cityNickname",
+        selectedItem.nickname || selectedItem.category || city
+    );
+
+    updateText("cityHeading", "Discover " + title);
+    updateText("cityTitle", "Welcome to " + title);
+    updateText("cityDescription", selectedItem.description);
+
+    // Different details for different categories
+    if (type === "city") {
+        updateText("cityPopulation", selectedItem.population);
+        updateText("cityFamous", selectedItem.famousFor);
+    } else if (type === "place") {
+        updateText("cityPopulation", selectedItem.category);
+        updateText("cityFamous", "Located in " + city);
+    } else if (type === "hotel") {
+        updateText("cityPopulation", "Price: " + (selectedItem.price || "Not Available"));
+        updateText("cityFamous", "Rating: " + (selectedItem.rating || "Not Available"));
+    } else if (type === "restaurant") {
+        updateText("cityPopulation", selectedItem.category || city);
+        updateText("cityFamous", "Located in " + city);
+    }
+
+    // Update image
+    const cityImage = document.getElementById("cityImage");
+
+    if (cityImage && selectedItem.image) {
+        cityImage.src = selectedItem.image;
+        cityImage.alt = title;
+    }
+
+    // Update hero background
+    const hero = document.getElementById("cityHero");
+
+    if (hero && selectedItem.image) {
+        hero.style.backgroundImage =
+            "linear-gradient(rgba(8,24,43,0.65), rgba(8,24,43,0.65)), url('" +
+            selectedItem.image + "')";
+    }
+
+    // Update Google Map
+    const map = document.getElementById("cityMap");
+
+    if (map) {
+        map.href = getMapLink(title, city);
+    }
+
+    // Related places only for cities
+    const relatedContainer = document.getElementById("relatedPlaces");
+
+    if (relatedContainer) {
+        if (type === "city") {
+            const relatedPlaces = places.filter(place =>
+                place.city &&
+                place.city.toLowerCase() === title.toLowerCase()
+            );
+
+            renderCards(relatedPlaces, "relatedPlaces", "place");
+        } else {
+            relatedContainer.innerHTML = "";
+        }
+    }
+
+} else {
+
+    updateText("cityName", "Details Not Found");
+    updateText("cityNickname", "Please select a valid item.");
+    updateText("cityDescription", "The requested information is not available.");
+
+    const relatedContainer = document.getElementById("relatedPlaces");
+
+    if (relatedContainer) {
+        relatedContainer.innerHTML =
+            "<p>Please go back and select another item.</p>";
+    }
+}
+
+    </script>
+
+</body>
+</html>

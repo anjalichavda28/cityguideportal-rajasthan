@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Rajasthan Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="auth-section">
+    <div class="auth-card">
+        <div style="text-align:center; margin-bottom:25px;">
+            <h1 style="color:#b58b45;">Rajasthan Guide</h1>
+        </div>
+
+        <h2 style="text-align:center;">Admin Login</h2>
+        <p style="text-align:center; color:#777;">
+            Login to manage your website
+        </p>
+
+        <form id="adminLoginForm">
+            <label>Email Address</label>
+            <input type="email" id="adminEmail"
+                   placeholder="Enter admin email" required>
+
+            <label>Password</label>
+            <input type="password" id="adminPassword"
+                   placeholder="Enter password" required>
+
+            <button type="submit" class="auth-submit">
+                Login as Admin
+            </button>
+
+            <p id="adminMessage" class="form-message"></p>
+        </form>
+
+        <p style="text-align:center; margin-top:20px;">
+            <a href="index.html">← Back to Home</a>
+        </p>
+    </div>
+</section>
+
+<script>
+document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("adminEmail").value;
+    let password = document.getElementById("adminPassword").value;
+
+    if (email === "admin@rajasthanguide.com" && password === "admin123") {
+        sessionStorage.setItem("rajasthanAdminLoggedIn", "true");
+        window.location.href = "admin-dashboard.html";
+    } else {
+        document.getElementById("adminMessage").textContent =
+            "Invalid email or password!";
+    }
+});
+</script>
+
+</body>
+</html>

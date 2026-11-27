@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Rajasthan Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f4f2ed;
+            font-family: Arial, sans-serif;
+        }
+
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .admin-sidebar {
+            width: 245px;
+            background: #17243a;
+            color: white;
+            padding: 25px 18px;
+            flex-shrink: 0;
+        }
+
+        .admin-sidebar h2 {
+            color: #e5bd75;
+            margin-bottom: 35px;
+        }
+
+        .admin-sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            margin: 8px 0;
+            border-radius: 7px;
+        }
+
+        .admin-sidebar a:hover {
+            background: #34445d;
+        }
+
+        .admin-main {
+            flex: 1;
+            padding: 30px;
+            min-width: 0;
+        }
+
+        .admin-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .admin-topbar h1 {
+            color: #17243a;
+        }
+
+        .admin-welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #c49a55;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .admin-stat {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .admin-stat h3 {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .admin-stat p {
+            font-size: 30px;
+            font-weight: bold;
+            color: #b58b45;
+            margin: 10px 0 0;
+        }
+
+        .admin-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .admin-management {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 15px;
+        }
+
+        .admin-management a {
+            background: #17243a;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 9px;
+            text-align: center;
+        }
+
+        .admin-management a:hover {
+            background: #b58b45;
+        }
+
+        .admin-action {
+            background: #b58b45;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .admin-messages {
+            overflow-x: auto;
+        }
+
+        .admin-messages table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 450px;
+        }
+
+        .admin-messages th,
+        .admin-messages td {
+            padding: 13px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        @media(max-width:700px) {
+            .admin-layout {
+                display: block;
+            }
+
+            .admin-sidebar {
+                width: auto;
+            }
+
+            .admin-main {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+        <h2>👑 Rajasthan</h2>
+
+        <a href="admin-dashboard.html">🏠 Dashboard</a>
+        <a href="admin-cities.html">🏙 Manage Cities</a>
+        <a href="admin-places.html">🏰 Tourist Places</a>
+        <a href="admin-hotels.html">🏨 Manage Hotels</a>
+        <a href="admin-restaurants.html">🍽 Restaurants</a>
+        <a href="admin-bookings.html">📋 Booking Management</a>
+        <a href="admin-bookings.html">📋 Manage Bookings</a>
+        <a href="index.html">🌐 View Website</a>
+
+        <a href="#" onclick="adminLogout()">🚪 Logout</a>
+    </aside>
+
+    <main class="admin-main">
+
+        <div class="admin-topbar">
+            <h1>Admin Dashboard</h1>
+            <button class="admin-action" onclick="adminLogout()">Logout</button>
+        </div>
+
+        <div class="admin-welcome">
+            <h2>Welcome, Administrator! 👋</h2>
+            <p>Manage your Rajasthan City Guide Portal from one place.</p>
+        </div>
+
+        <div class="admin-stats">
+
+            <div class="admin-stat">
+                <h3>Total Cities</h3>
+                <p id="totalCities">0</p>
+            </div>
+
+            <div class="admin-stat">
+                <h3>Tourist Places</h3>
+                <p id="totalPlaces">0</p>
+            </div>
+
+            <div class="admin-stat">
+                <h3>Total Hotels</h3>
+                <p id="totalHotels">0</p>
+            </div>
+
+            <div class="admin-stat">
+                <h3>Restaurants</h3>
+                <p id="totalRestaurants">0</p>
+            </div>
+
+            <div class="admin-stat">
+                <h3>Registered Users</h3>
+                <p id="totalUsers">0</p>
+            </div>
+
+            <div class="admin-stat">
+                <h3>Contact Messages</h3>
+                <p id="totalMessages">0</p>
+            </div>
+
+        </div>
+
+        <section class="admin-section">
+            <h2>Website Management</h2>
+
+            <div class="admin-management">
+                <a href="admin-cities.html">🏙<br><br>Manage Cities</a>
+                <a href="admin-places.html">🏰<br><br>Manage Tourist Places</a>
+                <a href="admin-hotels.html">🏨<br><br>Manage Hotels</a>
+                <a href="admin-restaurants.html">🍽<br><br>Manage Restaurants</a>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h2>Recent Contact Messages</h2>
+
+            <div class="admin-messages">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminMessages">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="js/data.js"></script>
+
+<script>
+    document.getElementById("totalCities").textContent = cities.length;
+    document.getElementById("totalPlaces").textContent = places.length;
+    document.getElementById("totalHotels").textContent = hotels.length;
+    document.getElementById("totalRestaurants").textContent = restaurants.length;
+
+    let users = JSON.parse(localStorage.getItem("rajasthanUsers")) || [];
+    let messages = JSON.parse(localStorage.getItem("rajasthanMessages")) || [];
+
+    document.getElementById("totalUsers").textContent = users.length;
+    document.getElementById("totalMessages").textContent = messages.length;
+
+    let messageBox = document.getElementById("adminMessages");
+
+    if (messages.length === 0) {
+        messageBox.innerHTML =
+            "<tr><td colspan='3'>No messages received yet.</td></tr>";
+    } else {
+        messageBox.innerHTML = messages.slice(-5).reverse().map(message => `
+            <tr>
+                <td>${message.name || "-"}</td>
+                <td>${message.email || "-"}</td>
+                <td>${message.message || "-"}</td>
+            </tr>
+        `).join("");
+    }
+
+    function adminLogout() {
+        sessionStorage.removeItem("rajasthanAdminLoggedIn");
+        window.location.href = "admin-login.html";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourites | Rajasthan City Guide Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <span>RAJASTHAN</span>
+            <small>City Guide Portal</small>
+        </a>
+        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="cities.html">Cities</a>
+            <a href="places.html">Places</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-content">
+        <span>YOUR SAVED DESTINATIONS</span>
+        <h1>My Favourites</h1>
+        <p>All your favourite cities, places, hotels and restaurants in one place.</p>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="section-heading">
+        <span class="section-label">SAVED ITEMS</span>
+        <h2>Your Favourite Destinations</h2>
+        <p>Manage the places you want to explore.</p>
+    </div>
+
+    <div class="city-grid" id="favoritesGrid"></div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 City Guide Portal – Rajasthan. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+    displayFavorites("favoritesGrid");
+</script>
+
+</body>
+</html>

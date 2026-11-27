@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Rajasthan City Guide Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <span>RAJASTHAN</span>
+            <small>City Guide Portal</small>
+        </a>
+        <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="cities.html">Cities</a>
+            <a href="places.html">Places</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-content">
+        <span>GET IN TOUCH</span>
+        <h1>Contact Us</h1>
+        <p>Have a question or suggestion? We would love to hear from you.</p>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="section-heading">
+        <span class="section-label">CONTACT INFORMATION</span>
+        <h2>Let's Connect</h2>
+        <p>Send us your queries, suggestions or feedback.</p>
+    </div>
+
+    <div class="contact-layout">
+
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>We are here to help you explore Rajasthan.</p>
+
+            <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>info@rajasthanguide.com</p>
+                </div>
+            </div>
+
+            <div class="contact-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Location</h3>
+                    <p>Rajasthan, India</p>
+                </div>
+            </div>
+
+            <div class="contact-info-item">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <h3>Website</h3>
+                    <p>City Guide Portal – Rajasthan</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-box">
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Enter your name" required>
+
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="Enter your email" required>
+
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" placeholder="Enter subject" required>
+
+                <label for="contactMessage">Your Message</label>
+                <textarea id="contactMessage" rows="5" placeholder="Write your message..." required></textarea>
+
+                <button type="submit" class="auth-submit">Send Message</button>
+                <p id="contactStatus" class="form-message"></p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 City Guide Portal – Rajasthan. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const feedback = {
+        id: Date.now(),
+        name: document.getElementById("contactName").value.trim(),
+        email: document.getElementById("contactEmail").value.trim(),
+        subject: document.getElementById("contactSubject").value.trim(),
+        message: document.getElementById("contactMessage").value.trim(),
+        date: new Date().toLocaleString()
+    };
+
+    const messages = JSON.parse(localStorage.getItem("rajasthanMessages")) || [];
+    messages.push(feedback);
+
+    localStorage.setItem("rajasthanMessages", JSON.stringify(messages));
+
+    document.getElementById("contactStatus").textContent =
+        "Thank you! Your message has been submitted successfully.";
+    document.getElementById("contactStatus").className = "form-message success";
+
+    document.getElementById("contactForm").reset();
+});
+</script>
+
+</body>
+</html>

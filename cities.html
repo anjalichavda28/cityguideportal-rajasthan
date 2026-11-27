@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Cities | City Guide Portal Rajasthan</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span>RAJASTHAN</span>
+                <small>City Guide Portal</small>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="cities.html" class="active">Cities</a>
+                <a href="places.html">Places</a>
+                <a href="hotels.html">Hotels</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+
+            <span>EXPLORE RAJASTHAN</span>
+
+            <h1>Discover Beautiful Cities</h1>
+
+            <p>
+                Explore the royal cities of Rajasthan,
+                their history, culture and famous attractions.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- CITIES SECTION -->
+    <section class="intro-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">DESTINATIONS</span>
+
+            <h2>Explore Rajasthan Cities</h2>
+
+            <p>
+                Find your favourite destination and start
+                exploring the royal land of Rajasthan.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTER -->
+        <div class="city-search-area">
+
+            <div class="search-input">
+                <i class="fas fa-search"></i>
+
+                <input
+                    type="text"
+                    id="citySearch"
+                    placeholder="Search city by name..."
+                >
+            </div>
+
+            <select id="cityFilter">
+                <option value="">All Cities</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Udaipur">Udaipur</option>
+                <option value="Jodhpur">Jodhpur</option>
+                <option value="Jaisalmer">Jaisalmer</option>
+                <option value="Pushkar">Pushkar</option>
+                <option value="Bikaner">Bikaner</option>
+            </select>
+
+        </div>
+
+
+        <!-- CITY CARDS -->
+        <div class="city-grid" id="cityGrid">
+
+            <!-- JavaScript will display city cards here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-about">
+                <h2>RAJASTHAN</h2>
+
+                <p>
+                    Your travel companion to explore the
+                    royal beauty and culture of Rajasthan.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="cities.html">Cities</a>
+                <a href="places.html">Places</a>
+                <a href="hotels.html">Hotels</a>
+                <a href="about.html">About Us</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Contact</h3>
+
+                <p>Email: info@rajasthanguide.com</p>
+                <p>Location: Rajasthan, India</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 City Guide Portal – Rajasthan.
+                All Rights Reserved.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        // Display all cities
+        renderCards(cities, "cityGrid", "city");
+
+        // Search city by name
+        setupSearch(
+            cities,
+            "citySearch",
+            "cityFilter",
+            "cityGrid",
+            "city"
+        );
+    </script>
+
+</body>
+</html>
